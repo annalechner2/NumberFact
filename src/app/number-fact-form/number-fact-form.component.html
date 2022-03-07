@@ -1,0 +1,47 @@
+<div class="main-container">
+
+<form class="form-style">
+
+    <div class="alert alert-success" *ngIf="isShown" role="alert">
+        {{message}}
+      </div>
+    <div class="row">
+        <h3>Enter in two numbers</h3>
+    </div>
+
+<div class="row">
+    <div class="col-1">
+        <div class="square-logo">
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="form-group">
+            <label for="firstNumber">Number 1:</label>
+            <input [(ngModel)]="NumberOne" [ngModelOptions]="{standalone: true}" id="firstNumber" type="text" class="form-control">
+          </div>
+        <div class="form-group">
+          <label for="secondNumber">Number 2:</label>
+          <input [(ngModel)]="NumberTwo" [ngModelOptions]="{standalone: true}" id="secondNumber" type="text" class="form-control">
+        </div>
+    </div>
+    
+</div>
+
+<br/>
+
+<div class="row row-end">
+    <div class="column">
+        <input type="checkbox" [(ngModel)]="termsAccepted" (click)="checkforvalidation()" [ngModelOptions]="{standalone: true}"/>
+        I acknowledge that I have read and accept the <a target="_blank" href="" class="atag-color">Terms of Use Agreement</a> 
+        and consent to the <a target="_blank" href="" class="atag-color">Privacy Policy </a> and  
+        <a target="_blank" href="" class="atag-color">Video Privacy Policy</a> .
+    </div>
+
+    <div class="column">
+    <button class="btn btn-color"  [disabled]= "!termsAccepted" (click)="RunCall()">Run</button>
+    </div>
+</div>
+
+    </form>
+</div>
